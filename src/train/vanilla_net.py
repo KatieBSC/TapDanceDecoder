@@ -66,5 +66,5 @@ for t in epochs:
         print(t, loss.item())
 
 # Save and export trained model and training errors
-evaluation.export(loss_hist, 'train_errors/vanilla_n40.pt')
+evaluation.export(loss_hist, 'train_errors/vanilla_n40.csv')
 torch.save(model, 'trained_models/vanilla_n40.pt')

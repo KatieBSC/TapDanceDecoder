@@ -28,6 +28,7 @@ print('Misclassification Rate: ', 100 * misclassifiction, '%')
 predictions = y_pred.numpy()
 true = y_test.numpy()
 
+# Why isn't this working with evaluation.get_errors??
 print('Accuracy score: ', accuracy_score(true, predictions))
 print('Log loss: ', log_loss(true, predictions))
 print('R2: ', r2_score(true, predictions))
