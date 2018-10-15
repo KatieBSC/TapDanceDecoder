@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41967435-083a-4514-947a-405b327fd147" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/MVP_Train.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/Peak_finding.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Feature_Extraction_Better-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Feature_Extraction_Train_data-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Feature_Extraction_Train_data-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/MVP_Train-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/MVP_Train-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Combi_creator.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/Combi_creator.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Collection.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/Data_Collection.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Collection_Train.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/Data_Collection_Train.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Feature_Extraction.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/Feature_Extraction.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Feature_Extraction_Better.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Feature_Extraction_Train_data.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/Feature_Extraction_Train_data.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVP.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/MVP.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVP_Train.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVP_result_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/MVP_result_analysis.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Peak_finding.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tap_generator.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/Tap_generator.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/evaluation/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/evaluation/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,34 +22,38 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="ipynb" value="2" />
-          <entry key="py" value="9" />
+          <entry key="md" value="1" />
+          <entry key="py" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IPNB" value="2" />
-          <entry key="Python" value="9" />
+          <entry key="Markdown" value="1" />
+          <entry key="Python" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="767" />
+          <entry key="md" value="70" />
+          <entry key="py" value="1302" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="767" />
+          <entry key="Markdown" value="70" />
+          <entry key="Python" value="1302" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/train/vanilla_net.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="-375">
+              <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -73,12 +62,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/predict/vanilla_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="30">
+                <caret line="2" column="144" selection-start-line="2" selection-start-column="144" selection-end-line="2" selection-end-column="144" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/evaluation/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+            <state relative-caret-position="120">
+              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/lib/classifier/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -109,16 +122,18 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/lib/classifier/__init__.py" />
-        <option value="$PROJECT_DIR$/lib/evaluation/__init__.py" />
         <option value="$PROJECT_DIR$/src/train/vanilla_net.py" />
+        <option value="$PROJECT_DIR$/lib/evaluation/__init__.py" />
+        <option value="$PROJECT_DIR$/src/predict/vanilla_test.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="26" />
-    <option name="y" value="86" />
-    <option name="width" value="1217" />
-    <option name="height" value="769" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="63" />
+    <option name="y" value="23" />
+    <option name="width" value="1286" />
+    <option name="height" value="792" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -141,7 +156,19 @@
             <path>
               <item name="TapDanceDecoder" type="b2602c69:ProjectViewProjectNode" />
               <item name="TapDanceDecoder" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="evaluation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TapDanceDecoder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TapDanceDecoder" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TapDanceDecoder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TapDanceDecoder" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="predict" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TapDanceDecoder" type="b2602c69:ProjectViewProjectNode" />
@@ -175,7 +202,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.vanilla_net">
+  <component name="RunManager" selected="Python.vanilla_test">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="TapDanceDecoder" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -218,14 +245,37 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="vanilla_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="TapDanceDecoder" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/predict" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/predict/vanilla_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.vanilla_net" />
       <item itemvalue="Python.__init__" />
+      <item itemvalue="Python.vanilla_test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.vanilla_net" />
+        <item itemvalue="Python.vanilla_test" />
         <item itemvalue="Python.__init__" />
+        <item itemvalue="Python.vanilla_net" />
       </list>
     </recent_temporary>
   </component>
@@ -243,10 +293,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="63" y="23" width="1286" height="792" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22269204" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980237" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
@@ -254,7 +305,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.39" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -288,20 +339,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/evaluation/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/classifier/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
@@ -310,11 +351,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/train/vanilla_net.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="-375">
+          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../pytorch_team_1/lib/evaluation/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/evaluation/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/predict/vanilla_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="144" selection-start-line="2" selection-start-column="144" selection-end-line="2" selection-end-column="144" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
