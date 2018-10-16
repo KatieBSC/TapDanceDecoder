@@ -8,8 +8,8 @@ device = torch.device("cpu")
 
 
 # Get data
-X_train = pd.read_csv('../../../../Source/Data/X_train_n40.csv')
-y_train = pd.read_csv('../../../../Source/Data/y_train_n40.csv')
+X_train = pd.read_csv('../../../../Source/Data/X_train_audio.csv')
+y_train = pd.read_csv('../../../../Source/Data/y_train_audio.csv')
 
 inputs = X_train.iloc[:,1:].values
 targets = y_train['Labels'].values
@@ -25,7 +25,7 @@ x = torch.tensor(inputs, device=device, dtype=dtype)
 y = torch.tensor(targets, device=device, dtype=torch.long).squeeze()
 
 # Hyper-parameters
-learning_rate = 0.0005
+learning_rate = 0.005
 batch_size = 64
 
 # Neural Network
@@ -66,5 +66,5 @@ for t in epochs:
         print(t, loss.item())
 
 # Save and export trained model and training errors
-evaluation.export(loss_hist, 'train_errors/vanilla_n40.csv')
-torch.save(model, 'trained_models/vanilla_n40.pt')
+evaluation.export(loss_hist, 'train_errors/vanilla_mfccplus_short.csv')
+torch.save(model, 'trained_models/vanilla_mfccplus_short.pt')
