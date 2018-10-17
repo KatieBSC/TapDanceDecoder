@@ -8,8 +8,8 @@ device = torch.device("cpu")
 
 
 # Get data
-#X_train = pd.read_csv('../../../../Source/Data/X_train_audio.csv')
-#y_train = pd.read_csv('../../../../Source/Data/y_train_audio.csv')
+X_train = pd.read_csv('../../../../Source/Data/X_train_mfccplus.csv')
+y_train = pd.read_csv('../../../../Source/Data/y_train_mfccplus.csv')
 
 inputs = X_train.iloc[:,1:].values
 targets = y_train['Labels'].values
@@ -60,11 +60,12 @@ for t in epochs:
         loss.backward()
         optimizer.step()
 
+
     # Calculate the errors (Print errors every 50 iterations)
     if t % 50 == 0:
         loss_hist.append(loss.item())
         print(t, loss.item())
 
 # Save and export trained model and training errors
-#evaluation.export(loss_hist, 'train_errors/vanilla_mfccplus_short.csv')
-#torch.save(model, 'trained_models/vanilla_mfccplus_short.pt')
+evaluation.export(loss_hist, 'train_errors/vanilla_mfccplus.csv')
+torch.save(model, 'trained_models/vanilla_mfccplus.pt')
