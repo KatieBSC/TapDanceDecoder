@@ -11,7 +11,7 @@ device = torch.device("cpu")
 X_train = pd.read_csv('../../../../Source/Data/X_train_mfccplus.csv')
 y_train = pd.read_csv('../../../../Source/Data/y_train_mfccplus.csv')
 
-inputs = X_train.iloc[:,1:21].values
+inputs = X_train.iloc[:,1:].values
 targets = y_train['Labels'].values
 
 N = inputs.shape[0]
@@ -24,7 +24,7 @@ x = torch.tensor(inputs, device=device, dtype=dtype)
 y = torch.tensor(targets, device=device, dtype=torch.long).squeeze()
 
 # Hyper-parameters
-learning_rate = 0.005
+learning_rate = 0.0005
 batch_size = 64
 
 # Neural Network with one hidden layer
