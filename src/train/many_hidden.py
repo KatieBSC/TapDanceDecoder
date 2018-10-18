@@ -8,11 +8,12 @@ device = torch.device("cpu")
 
 
 # Get data
-X_train = pd.read_csv('../../../../Source/Data/X_train_mfccplus.csv')
-y_train = pd.read_csv('../../../../Source/Data/y_train_mfccplus.csv')
+X_train = pd.read_csv('../../../../Source/Data/X_train_audio_filterbanks.csv')
+y_train = pd.read_csv('../../../../Source/Data/y_train_audio_filterbanks.csv')
 
 inputs = X_train.iloc[:,1:].values
 targets = y_train['Labels'].values
+
 
 N = inputs.shape[0]
 D_in = inputs.shape[1]
@@ -81,5 +82,5 @@ for t in epochs:
         print(t, loss.item())
 
 # Save and export trained model and training errors
-#evaluation.export(loss_hist, 'train_errors/many_hidden_adam.csv')
-#torch.save(model, 'trained_models/many_hidden_adam.pt')
+evaluation.export(loss_hist, 'train_errors/many_hidden_filterbanks.csv')
+torch.save(model, 'trained_models/many_hidden_filterbanks.pt')
