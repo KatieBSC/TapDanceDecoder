@@ -8,8 +8,8 @@ device = torch.device("cpu")
 
 
 # Get data
-X_train = pd.read_csv('../../../../Source/Data/X_train_audio_normal_filterbanks.csv')
-y_train = pd.read_csv('../../../../Source/Data/y_train_audio_normal_filterbanks.csv')
+X_train = pd.read_csv('../../../../Source/Data/X_train_audio_augmented.csv')
+y_train = pd.read_csv('../../../../Source/Data/y_train_audio_augmented.csv')
 
 inputs = X_train.iloc[:,1:].values
 targets = y_train['Labels'].values
@@ -82,5 +82,5 @@ for t in epochs:
         print(t, loss.item())
 
 # Save and export trained model and training errors
-#evaluation.export(loss_hist, 'train_errors/many_hidden_normal_filterbanks.csv')
-#torch.save(model, 'trained_models/many_hidden_normal_filterbanks.pt')
+evaluation.export(loss_hist, 'train_errors/many_hidden_augmented.csv')
+torch.save(model, 'trained_models/many_hidden_augmented.pt')

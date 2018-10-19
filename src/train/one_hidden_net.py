@@ -32,7 +32,6 @@ model = torch.nn.Sequential(
     nn.Linear(D_in, H),
     nn.ReLU(),
     nn.Linear(H, D_out),
-    nn.Sigmoid()
 )
 
 # Loss and optimizer
