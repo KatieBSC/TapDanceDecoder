@@ -2,8 +2,8 @@ import torch
 import evaluation
 import pandas as pd
 
-X_test = pd.read_csv('../../../../Source/Data/X_test_audio_mfcc.csv')
-y_test = pd.read_csv('../../../../Source/Data/y_test_audio_mfcc.csv')
+X_test = pd.read_csv('../../../../Source/Data/X_test_audio_stft_tempo.csv')
+y_test = pd.read_csv('../../../../Source/Data/y_test_audio_stft_tempo.csv')
 
 #data = pd.read_csv('../../../../Source/Data/youtube_data.csv')
 #data = data.sample(frac=1)
@@ -19,7 +19,7 @@ x_test = torch.tensor(X_test.values, device=device, dtype=dtype)
 y_test = torch.tensor(y_test.values, device=device, dtype=torch.long).squeeze()
 
 # Load model
-model = torch.load('../train/trained_models/vanilla_mfcc.pt')
+model = torch.load('../train/trained_models/vanilla_stft_tempo.pt')
 
 outputs = model(x_test)
 y_pred = torch.max(outputs.data, 1)[1]
@@ -35,5 +35,5 @@ true = y_test.numpy()
 evaluation.get_errors(true, predicted)
 
 # Export results
-#evaluation.export(predicted, 'predictions/vanilla_test_mfcc.csv')
-#evaluation.export(true, 'predictions/true_vanilla_test_mfcc.csv')
+#evaluation.export(predicted, 'predictions/vanilla_test_stft_tempo.csv')
+#evaluation.export(true, 'predictions/true_vanilla_test_stft_tempo.csv')
