@@ -8,8 +8,8 @@ import pandas as pd
 #data = pd.read_csv('../../../../Source/Data/youtube_data.csv')
 #data = data.sample(frac=1)
 
-X_test = pd.read_csv('../../../../Source/Data/X_test_audio_stft_tempo.csv')
-y_test = pd.read_csv('../../../../Source/Data/y_test_audio_stft_tempo.csv')
+X_test = pd.read_csv('../../../../Source/Data/X_test_audio_zcr.csv')
+y_test = pd.read_csv('../../../../Source/Data/y_test_audio_zcr.csv')
 
 X_test = X_test.iloc[:, 1:]
 y_test = y_test['Labels']
@@ -21,7 +21,7 @@ x_test = torch.tensor(X_test.values, device=device, dtype=dtype)
 y_test = torch.tensor(y_test.values, device=device, dtype=torch.long).squeeze()
 
 # Load model
-model = torch.load('../train/trained_models/one_hidden_stft_tempo.pt')
+model = torch.load('../train/trained_models/one_hidden_zcr_lr005.pt')
 
 outputs = model(x_test)
 y_pred = torch.max(outputs.data, 1)[1]
@@ -36,5 +36,5 @@ true = y_test.numpy()
 evaluation.get_errors(true, predicted)
 
 # Export results
-#evaluation.export(predicted, 'predictions/one_hidden_test_stft_tempo.csv')
-#evaluation.export(true, 'predictions/true_one_hidden_test_stft_tempo.csv')
+evaluation.export(predicted, 'predictions/one_hidden_test_zcr_lr005.csv')
+evaluation.export(true, 'predictions/true_one_hidden_test_zcr_lr005.csv')
