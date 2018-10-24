@@ -11,8 +11,8 @@ device = torch.device("cpu")
 #X_train = pd.read_csv('../../../../Source/Data/X_train_mfccplus.csv')
 #y_train = pd.read_csv('../../../../Source/Data/y_train_mfccplus.csv')
 
-X_train = pd.read_csv('../../../../Source/Data/X_train_audio_augmented_zcr.csv')
-y_train = pd.read_csv('../../../../Source/Data/y_train_audio_augmented_zcr.csv')
+X_train = pd.read_csv('../../../../Source/Data/X_train_audio_reaugmented_pad_rmse.csv')
+y_train = pd.read_csv('../../../../Source/Data/y_train_audio_reaugmented_pad_rmse.csv')
 
 inputs = X_train.iloc[:,1:].values
 targets = y_train['Labels'].values
@@ -27,7 +27,7 @@ x = torch.tensor(inputs, device=device, dtype=dtype)
 y = torch.tensor(targets, device=device, dtype=torch.long).squeeze()
 
 # Hyper-parameters
-learning_rate = 0.005
+learning_rate = 0.0005
 batch_size = 64
 
 # Neural Network with one hidden layer
@@ -71,5 +71,5 @@ for t in epochs:
         print(t, loss.item())
 
 # Save and export trained model and training errors
-#evaluation.export(loss_hist, 'train_errors/one_hidden_zcr_lr005.csv')
-#torch.save(model, 'trained_models/one_hidden_zcr_lr005.pt')
+#evaluation.export(loss_hist, 'train_errors/one_hidden_pad_rmse.csv')
+#torch.save(model, 'trained_models/one_hidden_pad_rmse.pt')

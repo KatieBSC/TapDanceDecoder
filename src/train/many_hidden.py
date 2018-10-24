@@ -8,8 +8,9 @@ device = torch.device("cpu")
 
 
 # Get data
-X_train = pd.read_csv('../../../../Source/Data/X_train_audio_augmented.csv')
-y_train = pd.read_csv('../../../../Source/Data/y_train_audio_augmented.csv')
+X_train = pd.read_csv('../../../../Source/Data/X_train_audio_reaugmented_pad_all.csv')
+y_train = pd.read_csv('../../../../Source/Data/y_train_audio_reaugmented_pad_all.csv')
+
 
 inputs = X_train.iloc[:,1:].values
 targets = y_train['Labels'].values
@@ -23,7 +24,6 @@ H_2 = 16
 H_3 = 32
 H_4 = 16
 H_5 = 8
-H_6 = 4
 
 
 x = torch.tensor(inputs, device=device, dtype=dtype)
@@ -33,7 +33,7 @@ y = torch.tensor(targets, device=device, dtype=torch.long).squeeze()
 learning_rate = 0.0005
 batch_size = 64
 
-# Neural Network with one hidden layer
+# Neural Network with multiple hidden layers
 model = torch.nn.Sequential(
     nn.Linear(D_in, H_1),
     nn.ReLU(),
@@ -45,7 +45,7 @@ model = torch.nn.Sequential(
     nn.ReLU(),
     nn.Linear(H_4, H_5),
     nn.ReLU(),
-    nn.Linear(H_5, H_6),
+    nn.Linear(H_5, D_out),
 )
 
 # Loss and optimizer
@@ -82,5 +82,5 @@ for t in epochs:
         print(t, loss.item())
 
 # Save and export trained model and training errors
-evaluation.export(loss_hist, 'train_errors/many_hidden_augmented.csv')
-torch.save(model, 'trained_models/many_hidden_augmented.pt')
+#evaluation.export(loss_hist, 'train_errors/many_hidden_pad_all_H5.csv')
+#torch.save(model, 'trained_models/many_hidden_pad_all_H5.pt')
