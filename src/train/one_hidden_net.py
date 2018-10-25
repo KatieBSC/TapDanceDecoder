@@ -8,11 +8,8 @@ device = torch.device("cpu")
 
 
 # Get data
-#X_train = pd.read_csv('../../../../Source/Data/X_train_mfccplus.csv')
-#y_train = pd.read_csv('../../../../Source/Data/y_train_mfccplus.csv')
-
-X_train = pd.read_csv('../../../../Source/Data/X_train_audio_reaugmented_pad_rmse.csv')
-y_train = pd.read_csv('../../../../Source/Data/y_train_audio_reaugmented_pad_rmse.csv')
+X_train = pd.read_csv('../../../../Source/Data/X_train_mfcc_zcr_energy_rmse_bpm.csv')
+y_train = pd.read_csv('../../../../Source/Data/y_train_mfcc_zcr_energy_rmse_bpm.csv')
 
 inputs = X_train.iloc[:,1:].values
 targets = y_train['Labels'].values
@@ -20,7 +17,7 @@ targets = y_train['Labels'].values
 N = inputs.shape[0]
 D_in = inputs.shape[1]
 D_out = targets.max() + 1
-H = 8
+H = 175
 
 
 x = torch.tensor(inputs, device=device, dtype=dtype)
@@ -44,7 +41,7 @@ optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 loss_hist = []
 
 # Train
-epochs = range(30000)
+epochs = range(3000)
 idx = 0
 for t in epochs:
     for batch in range(0, int(N / batch_size)):
@@ -71,5 +68,5 @@ for t in epochs:
         print(t, loss.item())
 
 # Save and export trained model and training errors
-#evaluation.export(loss_hist, 'train_errors/one_hidden_pad_rmse.csv')
-#torch.save(model, 'trained_models/one_hidden_pad_rmse.pt')
+#evaluation.export(loss_hist, 'train_errors/one_hidden_mfcc_zcr_energy_rmse_bpm.csv')
+#torch.save(model, 'trained_models/one_hidden_mfcc_zcr_energy_rmse_bpm.pt')
