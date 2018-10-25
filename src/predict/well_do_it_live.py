@@ -21,6 +21,8 @@ outputs = model(x_test)
 y_pred = (torch.argmax(outputs.data).numpy())
 
 print()
+print("What's on tap?")
+print()
 if y_pred == 1:
     print('Predicted: Shuffle')
 elif y_pred == 0:

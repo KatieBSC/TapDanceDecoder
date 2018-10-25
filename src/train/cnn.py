@@ -8,13 +8,12 @@ dtype = torch.float
 device = torch.device("cpu")
 
 # Get data
-# THIS NEEDS TO BE CHANGED!
 X_train = pd.read_csv('../../../../Source/Data/X_train_signal.csv')
 y_train = pd.read_csv('../../../../Source/Data/y_train_signal.csv')
 
 train_data = X_train.iloc[:,1:].values
-train_target = y_train['Labels'].values
-##########################################
+train_target = y_train['Labels']
+
 
 N = train_data.shape[0]
 
@@ -33,8 +32,8 @@ class Cnn(nn.Module):
         # 384 input features, 32 output features (see sizing flow below)
         self.fc1 = torch.nn.Linear(6 * 20772, 32)  # Change for my inputs
 
-        # 32 input features, 10 output features for our 10 defined classes
-        self.fc2 = torch.nn.Linear(32, 16)
+        # 32 input features, 10 output features for our 10 defined classes, in my case 2 classes
+        self.fc2 = torch.nn.Linear(32, 2)
 
     def forward(self, x):
         # Computes the activation of the first convolution
@@ -81,11 +80,13 @@ for t in epochs:
     for batch in range(0, int(N / batch_size)):
         # Berechne den Batch
         batch_x = x[batch * batch_size: (batch + 1) * batch_size, :]
-        print(batch_x)
+        print(batch_size)
 
         batch_x = batch_x.reshape(batch_size, 1, 20772)
+        print(batch_x.shape)
 
         batch_y = y[batch * batch_size: (batch + 1) * batch_size]
+        print(batch_y.shape)
 
 
         # Berechne die Vorhersage (foward step)
