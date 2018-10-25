@@ -8,19 +8,18 @@ device = torch.device("cpu")
 
 
 # Get data
-X_train = pd.read_csv('../../../../Source/Data/X_train_audio_reaugmented_pad_all.csv')
-y_train = pd.read_csv('../../../../Source/Data/y_train_audio_reaugmented_pad_all.csv')
+X_train = pd.read_csv('../../../../Source/Data/X_train_mfcc_zcr_energy_rmse_bpm.csv')
+y_train = pd.read_csv('../../../../Source/Data/y_train_mfcc_zcr_energy_rmse_bpm.csv')
 
-
-inputs = X_train.iloc[:,1:].values
+inputs = X_train.iloc[:,1:21].values
 targets = y_train['Labels'].values
 
 
 N = inputs.shape[0]
 D_in = inputs.shape[1]
 D_out = targets.max() + 1
-H_1 = 8
-H_2 = 16
+H_1 = 128
+H_2 = 64
 H_3 = 32
 H_4 = 16
 H_5 = 8
@@ -39,13 +38,13 @@ model = torch.nn.Sequential(
     nn.ReLU(),
     nn.Linear(H_1, H_2),
     nn.ReLU(),
-    nn.Linear(H_2, H_3),
-    nn.ReLU(),
-    nn.Linear(H_3, H_4),
-    nn.ReLU(),
-    nn.Linear(H_4, H_5),
-    nn.ReLU(),
-    nn.Linear(H_5, D_out),
+    nn.Linear(H_2, D_out)
+    #nn.ReLU(),
+    #nn.Linear(H_3, H_4),
+    #nn.ReLU(),
+    #nn.Linear(H_4, H_5),
+    #nn.ReLU(),
+    #nn.Linear(H_5, D_out),
 )
 
 # Loss and optimizer
@@ -55,7 +54,7 @@ optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 loss_hist = []
 
 # Train
-epochs = range(30000)
+epochs = range(3000)
 idx = 0
 for t in epochs:
     for batch in range(0, int(N / batch_size)):
@@ -82,5 +81,5 @@ for t in epochs:
         print(t, loss.item())
 
 # Save and export trained model and training errors
-#evaluation.export(loss_hist, 'train_errors/many_hidden_pad_all_H5.csv')
-#torch.save(model, 'trained_models/many_hidden_pad_all_H5.pt')
+#evaluation.export(loss_hist, 'train_errors/two_hidden_mfcc_bpm.csv')
+#torch.save(model, 'trained_models/two_hidden_mfcc_bpm.pt')

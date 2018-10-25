@@ -8,10 +8,10 @@ import pandas as pd
 #data = pd.read_csv('../../../../Source/Data/youtube_data.csv')
 #data = data.sample(frac=1)
 
-X_test = pd.read_csv('../../../../Source/Data/X_test_audio_pad_all.csv')
-y_test = pd.read_csv('../../../../Source/Data/y_test_audio_pad_all.csv')
+X_test = pd.read_csv('../../../../Source/Data/X_validate_mfcc_zcr_energy_rmse_bpm.csv')
+y_test = pd.read_csv('../../../../Source/Data/y_validate_mfcc_zcr_energy_rmse_bpm.csv')
 
-X_test = X_test.iloc[:, 1:]
+X_test = X_test.iloc[:, 1:21]
 y_test = y_test['Labels']
 
 
@@ -22,7 +22,7 @@ x_test = torch.tensor(X_test.values, device=device, dtype=dtype)
 y_test = torch.tensor(y_test.values, device=device, dtype=torch.long).squeeze()
 
 # Load model
-model = torch.load('../train/trained_models/many_hidden_pad_all_H5.pt')
+model = torch.load('../train/trained_models/two_hidden_mfcc_bpm.pt')
 
 outputs = model(x_test)
 y_pred = torch.max(outputs.data, 1)[1]
@@ -37,5 +37,5 @@ true = y_test.numpy()
 evaluation.get_errors(true, predicted)
 
 # Export results
-#evaluation.export(predicted, 'predictions/many_hidden_test_pad_all_H5.csv')
-#evaluation.export(true, 'predictions/true_many_hidden_test_pad_all_H5.csv')
+#evaluation.export(predicted, 'predictions/two_hidden_test_mfcc_bpm.csv')
+#evaluation.export(true, 'predictions/true_two_hidden_test_mfcc_bpm.csv')

@@ -11,7 +11,7 @@ import pandas as pd
 X_test = pd.read_csv('../../../../Source/Data/X_validate_mfcc_zcr_energy_rmse_bpm.csv')
 y_test = pd.read_csv('../../../../Source/Data/y_validate_mfcc_zcr_energy_rmse_bpm.csv')
 
-X_test = X_test.iloc[:, 1:]
+X_test = X_test.iloc[:, 1:21]
 y_test = y_test['Labels']
 
 dtype = torch.float
@@ -21,7 +21,7 @@ x_test = torch.tensor(X_test.values, device=device, dtype=dtype)
 y_test = torch.tensor(y_test.values, device=device, dtype=torch.long).squeeze()
 
 # Load model
-model = torch.load('../train/trained_models/one_hidden_mfcc_zcr_energy_rmse_bpm.pt')
+model = torch.load('../train/trained_models/one_hidden_mfcc_bpm_128.pt')
 
 outputs = model(x_test)
 y_pred = torch.max(outputs.data, 1)[1]
@@ -36,5 +36,5 @@ true = y_test.numpy()
 evaluation.get_errors(true, predicted)
 
 # Export results
-#evaluation.export(predicted, 'predictions/one_hidden_test_mfcc_zcr_energy_rmse_bpm.csv')
-#evaluation.export(true, 'predictions/true_one_hidden_test_mfcc_zcr_energy_rmse_bpm.csv')
+evaluation.export(predicted, 'predictions/one_hidden_test_mfcc_bpm_128.csv')
+evaluation.export(true, 'predictions/true_one_hidden_test_mfcc_bpm_128.csv')
