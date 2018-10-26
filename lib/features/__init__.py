@@ -1,5 +1,6 @@
 import numpy as np
 import librosa.display
+from pydub import AudioSegment
 
 
 # Feature parameters
@@ -61,3 +62,7 @@ def get_label(path):
         return 1
     else:
         return 0
+
+def playback(path):
+    song = AudioSegment.from_wav(path)
+    return song
