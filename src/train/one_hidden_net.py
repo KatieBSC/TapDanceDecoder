@@ -13,15 +13,14 @@ X_train = pd.read_csv('../../../../Source/Data/X_train_mfcc_zcr_energy_rmse_bpm.
 y_train = pd.read_csv('../../../../Source/Data/y_train_mfcc_zcr_energy_rmse_bpm.csv')
 
 
-#inputs = X_train.iloc[:,1:21].values
-inputs = X_train.iloc[:, np.r_[1:21, 184:347, 510]].values
+inputs = X_train.iloc[:,1:21].values
+#inputs = X_train.iloc[:, np.r_[1:21, 184:347, 510]].values
 targets = y_train['Labels'].values
 
 N = inputs.shape[0]
 D_in = inputs.shape[1]
-D_out = targets.max() + 1
+D_out = targets.max() +1
 H = 128
-
 
 x = torch.tensor(inputs, device=device, dtype=dtype)
 y = torch.tensor(targets, device=device, dtype=torch.long).squeeze()
@@ -71,5 +70,5 @@ for t in epochs:
         print(t, loss.item())
 
 # Save and export trained model and training errors
-evaluation.export(loss_hist, 'train_errors/one_hidden_mfcc_energy_bpm_128.csv')
-torch.save(model, 'trained_models/one_hidden_mfcc_energy_bpm_128.pt')
+#evaluation.export(loss_hist, 'train_errors/one_hidden_mfcc_energy_bpm_12.csv')
+#torch.save(model, 'trained_models/one_hidden_mfcc_energy_bpm_12.pt')
