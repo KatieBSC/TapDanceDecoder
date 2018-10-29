@@ -1,0 +1,29 @@
+swagger: '2.0'
+schemes: [http, https]
+info:
+  title: Color Picker API
+  version: "0.1"
+  description: Simple example API to predict color names
+
+consumes:
+  - multipart/form-data
+produces:
+  - application/json
+
+paths:
+  /predict:
+    post:
+      tags: [audio]
+      operationId: app.predict
+      summary: get tap name for audio
+      parameters:
+        - in: formData
+          name: audio_data
+          description: audio to be processed
+          type: file
+
+      responses:
+        200:
+          description: Return tap name
+          schema:
+            type: string
