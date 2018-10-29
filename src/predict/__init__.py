@@ -10,7 +10,8 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 start = time.time()
 
 # Get test data
-path = '../../../../Source/Shuffle/3/1.wav'
+# path = '../../../../Source/Shuffle/4/2.wav'
+path = '../../../../Source/Clean_train_clips/Test_pad/Ball_change/5/5.wav'
 
 # Listen to test data
 features.playback(path)
