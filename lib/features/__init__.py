@@ -91,3 +91,9 @@ def resize_signal(path, length):
     else:
         y = samples
     return y, sample_rate
+
+
+def export_wav(original_file, new_name, original_type):
+    audio = AudioSegment.from_file(original_file, format=original_type)
+    audio.export(new_name, format='wav')
+    return "Exported file as " + str(new_name)
