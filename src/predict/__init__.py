@@ -1,6 +1,9 @@
 import features
 import torch
+import warnings
 
+# Ignore scipy fftpack Future Warning raised by librosa
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # Get test data
 path = '../../../../Source/Shuffle/3/1.wav'
@@ -18,29 +21,29 @@ hop_length = 128
 samples, sample_rate = features.resize_signal(path=path, length=clip_length)
 
 # Select features
-feature_list = ['mfcc', 'bpm']
+feature_list = ['mfcc', 'zcr', 'energy', 'rmse', 'bpm']
 
 # Get feature input data
 test_features = features.Features(samples=samples,
-                           sample_rate=sample_rate,
-                           clip_length=clip_length,
-                           n_mfcc=n_mfcc,
-                           frame_length=frame_length,
-                           hop_length=hop_length)
+                                  sample_rate=sample_rate,
+                                  clip_length=clip_length,
+                                  n_mfcc=n_mfcc,
+                                  frame_length=frame_length,
+                                  hop_length=hop_length)
 
 inputs = (test_features.get_feature_array(feature_list=feature_list))
 
 
 # Select Model
-# model = ('..train/trained_models/one_hidden_mfcc_zcr_energy_rmse_bpm.pt')
-# model = ('..train/trained_models/one_hidden_mfcc_zcr_energy_rmse_bpm_128.pt')
-# model = ('..train/trained_models/one_hidden_mfcc_zcr_energy_rmse_bpm_256.pt')
-# model = ('..train/trained_models/two_hidden_mfcc_zcr_energy_rmse_bpm.pt')
+# model = '..train/trained_models/one_hidden_mfcc_zcr_energy_rmse_bpm.pt'
+model = '../train/trained_models/one_hidden_mfcc_zcr_energy_rmse_bpm_128.pt'
+# model = '..train/trained_models/one_hidden_mfcc_zcr_energy_rmse_bpm_256.pt'
+# model = '..train/trained_models/two_hidden_mfcc_zcr_energy_rmse_bpm.pt'
 
-# model = ('..train/trained_models/one_hidden_mfcc_128.pt')
-# model = ('..train/trained_models/two_hidden_mfcc.pt')
-model = ('../train/trained_models/one_hidden_mfcc_bpm_128.pt')
-# model = ('..train/trained_models/two_hidden_mfcc_bpm.pt')
+# model = '..train/trained_models/one_hidden_mfcc_128.pt'
+# model = '..train/trained_models/two_hidden_mfcc.pt'
+# model = '../train/trained_models/one_hidden_mfcc_bpm_128.pt'
+# model = '..train/trained_models/two_hidden_mfcc_bpm.pt'
 
 # Load and Predict
 dtype = torch.float
@@ -68,11 +71,3 @@ if true == 1:
     print('It was a Shuffle.')
 elif true == 0:
     print('It was a Ball change.')
-
-
-
-
-
-
-
-
