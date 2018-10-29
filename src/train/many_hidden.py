@@ -20,9 +20,6 @@ D_in = inputs.shape[1]
 D_out = targets.max() + 1
 H_1 = 128
 H_2 = 64
-H_3 = 32
-H_4 = 16
-H_5 = 8
 
 
 x = torch.tensor(inputs, device=device, dtype=dtype)
@@ -39,12 +36,6 @@ model = torch.nn.Sequential(
     nn.Linear(H_1, H_2),
     nn.ReLU(),
     nn.Linear(H_2, D_out)
-    #nn.ReLU(),
-    #nn.Linear(H_3, H_4),
-    #nn.ReLU(),
-    #nn.Linear(H_4, H_5),
-    #nn.ReLU(),
-    #nn.Linear(H_5, D_out),
 )
 
 # Loss and optimizer
