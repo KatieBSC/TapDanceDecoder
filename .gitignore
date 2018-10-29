@@ -4,3 +4,5 @@ trained_models
 .ipynb_checkpoints
 .DS_Store
 __pycache__
+app/uploads/
+app/models/*.pt
