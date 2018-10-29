@@ -1,9 +1,13 @@
 import features
 import torch
 import warnings
+import time
 
 # Ignore scipy fftpack Future Warning raised by librosa
 warnings.simplefilter(action='ignore', category=FutureWarning)
+
+# Start the clock
+start = time.time()
 
 # Get test data
 path = '../../../../Source/Shuffle/3/1.wav'
@@ -71,3 +75,8 @@ if true == 1:
     print('It was a Shuffle.')
 elif true == 0:
     print('It was a Ball change.')
+
+# End the clock and print time
+end = time.time()
+print()
+print(f'Time elapsed: {end - start}s.')
