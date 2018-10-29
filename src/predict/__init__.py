@@ -3,7 +3,7 @@ import torch
 
 
 # Get test data
-path = '../../../../Source/Shuffle/4/1.wav'
+path = '../../../../Source/Shuffle/3/1.wav'
 
 # Listen to test data
 features.playback(path)
@@ -28,9 +28,8 @@ test_features = features.Features(samples=samples,
                            frame_length=frame_length,
                            hop_length=hop_length)
 
-inputs = test_features.get_feature_array(feature_list=feature_list)
-print(inputs.shape)
-print(type(inputs))
+inputs = (test_features.get_feature_array(feature_list=feature_list))
+
 
 # Select Model
 # model = ('..train/trained_models/one_hidden_mfcc_zcr_energy_rmse_bpm.pt')
@@ -40,7 +39,7 @@ print(type(inputs))
 
 # model = ('..train/trained_models/one_hidden_mfcc_128.pt')
 # model = ('..train/trained_models/two_hidden_mfcc.pt')
-model = ('..train/trained_models/one_hidden_mfcc_bpm_128.pt')
+model = ('../train/trained_models/one_hidden_mfcc_bpm_128.pt')
 # model = ('..train/trained_models/two_hidden_mfcc_bpm.pt')
 
 # Load and Predict
@@ -56,7 +55,7 @@ outputs = model(inputs)
 
 y_pred = (torch.argmax(outputs.data).numpy())
 
-true = get_label(clip_path)
+true = features.get_label(path)
 
 print("What's on tap?")
 print()
