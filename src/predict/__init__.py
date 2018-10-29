@@ -39,7 +39,7 @@ inputs = (test_features.get_feature_array(feature_list=feature_list))
 
 
 # Select Model
-model = '..train/trained_models/one_hidden_mfcc_128.pt'
+model = '../train/trained_models/one_hidden_mfcc_128.pt'
 
 
 # Load and Predict
