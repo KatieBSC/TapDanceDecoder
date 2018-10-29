@@ -25,7 +25,7 @@ hop_length = 128
 samples, sample_rate = features.resize_signal(path=path, length=clip_length)
 
 # Select features
-feature_list = ['mfcc', 'zcr', 'energy', 'rmse', 'bpm']
+feature_list = ['mfcc']
 
 # Get feature input data
 test_features = features.Features(samples=samples,
@@ -39,15 +39,8 @@ inputs = (test_features.get_feature_array(feature_list=feature_list))
 
 
 # Select Model
-# model = '..train/trained_models/one_hidden_mfcc_zcr_energy_rmse_bpm.pt'
-model = '../train/trained_models/one_hidden_mfcc_zcr_energy_rmse_bpm_128.pt'
-# model = '..train/trained_models/one_hidden_mfcc_zcr_energy_rmse_bpm_256.pt'
-# model = '..train/trained_models/two_hidden_mfcc_zcr_energy_rmse_bpm.pt'
+model = '..train/trained_models/one_hidden_mfcc_128.pt'
 
-# model = '..train/trained_models/one_hidden_mfcc_128.pt'
-# model = '..train/trained_models/two_hidden_mfcc.pt'
-# model = '../train/trained_models/one_hidden_mfcc_bpm_128.pt'
-# model = '..train/trained_models/two_hidden_mfcc_bpm.pt'
 
 # Load and Predict
 dtype = torch.float
