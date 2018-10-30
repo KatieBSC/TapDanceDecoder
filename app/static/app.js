@@ -149,19 +149,23 @@ function createDownloadLink(blob) {
   var upload = document.createElement('a');
   upload.href="#";
   upload.innerHTML = "Upload";
-  upload.addEventListener("click", function(event){
+  upload.addEventListener("click", function(event) {
       var xhr=new XMLHttpRequest();
       xhr.onload=function(e) {
-          if(this.readyState === 4) {
-              console.log("Server returned: ",e.target.responseText);
+          if (this.readyState === 4) {
+              var result = JSON.parse(e.target.responseText);
+              console.log("Server returned: ", result);
+              var resultSpan = document.createElement('span');
+              resultSpan.innerHTML = "Predicted: " + result.name;
+              li.appendChild(resultSpan);
           }
       };
       var fd=new FormData();
-      fd.append("audio_data",blob, filename);
+      fd.append("audio_data", blob, filename);
       xhr.open("POST", apiEndpoint, true);
       xhr.send(fd);
   })
-  li.appendChild(document.createTextNode (" "))//add a space in between
+  li.appendChild(document.createTextNode(" "))//add a space in between
   li.appendChild(upload)//add the upload link to li
 
   //add the li element to the ol
