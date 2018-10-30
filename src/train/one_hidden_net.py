@@ -70,5 +70,5 @@ for t in epochs:
         print(t, loss.item())
 
 # Save and export trained model and training errors
-#evaluation.export(loss_hist, 'train_errors/one_hidden_mfcc_energy_bpm_12.csv')
-#torch.save(model, 'trained_models/one_hidden_mfcc_energy_bpm_12.pt')
+#evaluation.export(loss_hist, 'train_errors/one_hidden_mfcc_128_2.csv')
+#torch.save(model, 'trained_models/one_hidden_mfcc_128_2.pt')
