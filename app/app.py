@@ -22,8 +22,8 @@ def predict(audio_data):
     path = f'./app/uploads/{filename}.wav'
     audio_data.save(path)
 
-    prediction.get_prediction(path)
-    return {}
+    name = prediction.get_prediction(path)
+    return {'name': name}
 
 
 

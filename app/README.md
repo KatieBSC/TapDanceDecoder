@@ -10,5 +10,5 @@ In PyCharm Terminal:
 source activate neue-fische
 export PYTHONPATH="./lib"
 python app/app.py
-
-Open http://localhost:8080/ in your browser
+ 
+http://localhost:8080/ in your browser

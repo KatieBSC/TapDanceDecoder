@@ -6,6 +6,7 @@ import time
 # Ignore scipy fftpack Future Warning raised by librosa
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
+
 def get_prediction(path):
 
     print(features)
@@ -61,19 +62,19 @@ def get_prediction(path):
 
     true = features.get_label(path)
 
-    print("What's on tap?")
+    print("What's that tap?")
     print()
+    return_value = 'unknown'
     if y_pred == 1:
+        return_value = 'Shuffle'
         print('Predicted: Shuffle')
     elif y_pred == 0:
+        return_value = 'Ball change'
         print('Predicted: Ball change')
     print()
-    if true == 1:
-        print('It was a Shuffle.')
-    elif true == 0:
-        print('It was a Ball change.')
 
-    # End the clock and print time
+     # End the clock and print time
     end = time.time()
     print()
     print(f'Time elapsed: {end - start}s.')
+    return return_value
