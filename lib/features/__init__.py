@@ -82,8 +82,9 @@ def playback(path):
     return audio
 
 
-def resize_signal(path, length):
-    samples, sample_rate = librosa.load(path)
+#def resize_signal(path, length):
+#    samples, sample_rate = librosa.load(path)
+def resize_signal(samples, sample_rate, length):
     if len(samples) < length:
         y = np.pad(samples, (0, length - len(samples)), 'constant')
     elif len(samples) > length:
@@ -97,3 +98,8 @@ def export_wav(original_file, new_name, original_type):
     audio = AudioSegment.from_file(original_file, format=original_type)
     audio.export(new_name, format='wav')
     return "Exported file as " + str(new_name)
+
+def resample_signal(path, new_sr=22050):
+    y, sr = librosa.load(path, sr=44100)
+    new_y = librosa.resample(y, sr, new_sr)
+    return new_y, new_sr

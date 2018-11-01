@@ -27,7 +27,8 @@ def get_prediction(path):
     hop_length = 128
 
     # Reshape test data
-    samples, sample_rate = features.resize_signal(path=path, length=clip_length)
+    samples, sample_rate = features.resample_signal(path=path)
+    samples, sample_rate = features.resize_signal(samples, sample_rate, length=clip_length)
 
     # Select features
     feature_list = ['mfcc']
