@@ -13,5 +13,5 @@ Unfortunately, while there is no shortage of tap dance sound effects, it is rare
 - Feature extraction for input data (MFCC, Zero crossing rate, energy, tempo)
 - Initial model: Logistic regression and Random Forest models with sklearn
 - Improvements: Feedforward neural network with torch
-- Maybe: Convolutional neural network to decode steps using raw signal data
-- If I'm lucky, incorporate a direct "tap translation" over live microphone
+- Extension: Frontend to record, upload, predict sound samples
+- Future: Convolutional neural network to decode steps using raw signal data
