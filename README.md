@@ -11,7 +11,7 @@ Unfortunately, while there is no shortage of tap dance sound effects, it is rare
 ## Road Map:
 - Data collection from volunteers, YouTube of two steps (2 classes)
 - Feature extraction for input data (MFCC, Zero crossing rate, energy, tempo)
-- Initial model: Logistic regression and Random Forest models with sklearn
+- Initial model: Logistic regression and Random Forest models
 - Improvements: Feedforward neural network with torch
 - Extension: Frontend to record, upload, predict sound samples
 - Future: Convolutional neural network to decode steps using raw signal data
