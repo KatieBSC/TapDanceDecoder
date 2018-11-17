@@ -11,7 +11,7 @@ device = torch.device("cpu")
 X_train = pd.read_csv('../../../../Source/Data/X_train_audio_augmented_zcr.csv')
 y_train = pd.read_csv('../../../../Source/Data/y_train_audio_augmented_zcr.csv')
 
-inputs = X_train.iloc[:,1:].values
+inputs = X_train.iloc[:, 1:].values
 targets = y_train['Labels'].values
 
 N = inputs.shape[0]
