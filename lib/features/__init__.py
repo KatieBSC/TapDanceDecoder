@@ -1,6 +1,6 @@
 import numpy as np
 import librosa.display
-from pydub import AudioSegment
+import IPython
 from pathlib import Path
 
 
@@ -78,12 +78,11 @@ def get_label(path):
 
 
 def playback(path):
-    audio = (AudioSegment.from_wav(path))
+    y, sr = librosa.load(path)
+    audio = IPython.display.Audio(data=y, rate=sr)
     return audio
 
 
-#def resize_signal(path, length):
-#    samples, sample_rate = librosa.load(path)
 def resize_signal(samples, sample_rate, length):
     if len(samples) < length:
         y = np.pad(samples, (0, length - len(samples)), 'constant')
@@ -94,12 +93,12 @@ def resize_signal(samples, sample_rate, length):
     return y, sample_rate
 
 
-def export_wav(original_file, new_name, original_type):
-    audio = AudioSegment.from_file(original_file, format=original_type)
-    audio.export(new_name, format='wav')
-    return "Exported file as " + str(new_name)
-
 def resample_signal(path, new_sr=22050):
-    y, sr = librosa.load(path, sr=44100)
+    y, sr = librosa.load(path)
     new_y = librosa.resample(y, sr, new_sr)
     return new_y, new_sr
+
+
+def remove_1_sec(y, sr):
+    new_y = y[sr:]
+    return new_y, sr
