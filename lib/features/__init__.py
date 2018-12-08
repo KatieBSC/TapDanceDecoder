@@ -2,6 +2,7 @@ import numpy as np
 import librosa.display
 import IPython
 from pathlib import Path
+from scipy.signal import find_peaks
 
 
 # Feature generating functions
@@ -102,3 +103,15 @@ def resample_signal(path, new_sr=22050):
 def remove_1_sec(y, sr):
     new_y = y[sr:]
     return new_y, sr
+
+
+def adjust_to_peak(y, sr, height, start_pad, clip_length):
+    peaks, _ = find_peaks(y, height=height)
+    if peaks[0] > start_pad:
+        start = peaks[0]-start_pad
+    else:
+        diff = start_pad - peaks[0]
+        y = np.pad(y, (diff, 0), 'constant')
+        start = 0
+    end = start + clip_length
+    return y[start:end], sr
