@@ -22,12 +22,16 @@ def get_prediction(path):
     n_mfcc = 20
     frame_length = 256
     hop_length = 128
+    height = 0.25
+    start_pad = 2205  # 100 msec at sr=22050
     #top_db = 10
 
     # Reshape test data
     samples, sample_rate = features.resample_signal(path=path)
-    samples, sample_rate = features.adjust_to_peak(y=samples, sr=sample_rate, height=0.25,
-                                          start_pad=1600, clip_length=clip_length)
+    samples, sample_rate = features.adjust_to_peak(y=samples, sr=sample_rate,
+                                                   height=height,
+                                                   start_pad=start_pad,
+                                                   clip_length=clip_length)
     #samples = librosa.effects.trim(samples, top_db=top_db)[0]
     #samples, sample_rate = features.resize_signal(samples, sample_rate, length=clip_length)
 
